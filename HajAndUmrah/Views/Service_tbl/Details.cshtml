@@ -1,0 +1,107 @@
+﻿@model HajAndUmrah.Models.Service_tbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayoutPackageList.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Service_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AirlinesName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AirlinesName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepratureDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepratureDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DepratureTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepratureTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusDepratureDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusDepratureDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusDepratureTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusDepratureTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusArrivalDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusArrivalDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BusArrivalTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BusArrivalTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer_tbl.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer_tbl.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ServiceId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

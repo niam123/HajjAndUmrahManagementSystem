@@ -1,0 +1,99 @@
+﻿@model HajAndUmrah.Models.Package_tbl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayoutPackageList.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Package_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackagePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackagePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelName_tbl.HotelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelName_tbl.HotelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackageGroup_tbl.PackageGroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackageGroup_tbl.PackageGroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StarRate_tbl.StarRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StarRate_tbl.StarRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackageType_tbl.PackageTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackageType_tbl.PackageTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomType_tbl.RoomType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomType_tbl.RoomType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TravelClass_tbl.TravelClassName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TravelClass_tbl.TravelClassName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PackageId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

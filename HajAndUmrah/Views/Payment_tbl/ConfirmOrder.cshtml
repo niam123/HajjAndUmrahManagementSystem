@@ -1,0 +1,91 @@
+﻿@model IEnumerable<HajAndUmrah.Models.Payment_tbl>
+
+@{
+    ViewBag.Title = "ConfirmOrder";
+    Layout = "~/Views/Shared/_AdminLayoutPackageList.cshtml";
+}
+
+<h2>Confirm Order List</h2>
+
+<form method="post">
+    <input type="text" name="Search" />
+    <input type="submit" value="Search" />
+
+</form>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_tbl.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_tbl.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_tbl.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_tbl.Package_tbl.PackageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_tbl.Package_tbl.PackageType_tbl.PackageTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_tbl.Package_tbl.PackagePrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_tbl.TotalPrice)
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        @if (item.Status == 1)
+        {
+            <td style="background-color:green">
+                Paid
+            </td>
+        }
+        else
+        {
+            <td style="background-color:red">
+               Not Paid
+            </td>
+        }
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_tbl.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_tbl.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_tbl.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_tbl.Package_tbl.PackageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_tbl.Package_tbl.PackageType_tbl.PackageTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_tbl.Package_tbl.PackagePrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_tbl.TotalPrice)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PaymentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PaymentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PaymentId })
+        </td>*@
+    </tr>
+}
+
+</table>

@@ -1,0 +1,130 @@
+﻿@model HajAndUmrah.Models.Payment_tbl
+
+<!-- Bootstrap CSS
+       ============================================ -->
+<link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+
+<button onclick="myFunction()">Print this page</button>
+<script>
+    function myFunction() {
+        window.print();
+    }
+</script>
+<center><h2>Details Information</h2></center>
+<hr />
+<div class="container">
+    <div class="row" style=" border:groove 2px ; color:red;margin-bottom:80px">
+        <div class="col-md-6">
+            <center><h2>Customer Information</h2></center>
+            <table class="table table-bordered table-responsive" style="border:10px">
+                <tr>
+                    <th>Name: </th>
+                    <td>@Model.Customer_tbl.FirstName @Model.Customer_tbl.LastName</td>
+                </tr>
+                <tr>
+                    <th>Email: </th>
+                    <td>@Model.Customer_tbl.Email</td>
+                </tr>
+                <tr>
+                    <th>City: </th>
+                    <td>@Model.Customer_tbl.City</td>
+                </tr>
+                <tr>
+                    <th>Postal Code: </th>
+                    <td>@Model.Customer_tbl.PostalCode</td>
+                </tr>
+                <tr>
+                    <th>Passport: </th>
+                    <td>@Model.Customer_tbl.Passport</td>
+                </tr>
+                <tr>
+                    <th>Designation: </th>
+                    <td>@Model.Customer_tbl.Designation</td>
+                </tr>
+                <tr>
+                    <th>Phone: </th>
+                    <td>@Model.Customer_tbl.Phone</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-md-6">
+            <center><h2>Package Information</h2></center>
+            <table class="table table-bordered table-responsive">
+                <tr>
+                    <th>Date of journey: </th>
+                    <td>@Model.Customer_tbl.Package_tbl.Date.ToString("dd-MM-yyyy")</td>
+                </tr>
+                <tr>
+                    <th>Package Name: </th>
+                    <td>@Model.Customer_tbl.Package_tbl.PackageName</td>
+                </tr>
+                <tr>
+                    <th>Package Type: </th>
+                    <td>@Model.Customer_tbl.Package_tbl.PackageType_tbl.PackageTypeName</td>
+                </tr>
+                <tr>
+                    <th>Package Group: </th>
+                    <td>@Model.Customer_tbl.Package_tbl.PackageGroup_tbl.PackageGroupName</td>
+                </tr>
+                <tr>
+                    <th>Number Of Days: </th>
+                    <td>@Model.Customer_tbl.Package_tbl.NoOfDays</td>
+                </tr>
+                <tr>
+                    <th>Travel Class: </th>
+                    <td>@Model.Customer_tbl.Package_tbl.TravelClass_tbl.TravelClassName</td>
+                </tr>
+                <tr>
+                    <th>Hotel Name: </th>
+                    <td>@Model.Customer_tbl.Package_tbl.HotelName_tbl.HotelName</td>
+                </tr>
+                <tr>
+                    <th>Room Type: </th>
+                    <td>@Model.Customer_tbl.Package_tbl.RoomType_tbl.RoomType</td>
+                </tr>
+                <tr>
+                    <th>Star Rate: </th>
+                    <td>@Model.Customer_tbl.Package_tbl.StarRate_tbl.StarRate</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row" style=" border:groove 2px ; color:red;margin-bottom:20px">
+        <div class="col-md-12">
+            <center><h4>Details Information</h4></center>
+            <table class="table table-bordered table-responsive">
+                <tr>
+                    <th>Number Of Adult Travellers: </th>
+                    <td>@Model.Customer_tbl.NoOfAdultTravellers</td>
+                </tr>
+                <tr>
+                    <th>Number Of Child Travellers: </th>
+                    <td>@Model.Customer_tbl.NoOfChildTravellers</td>
+                </tr>
+                <tr>
+                    <th>Package Price: </th>
+                    <td>@Model.Customer_tbl.Package_tbl.PackagePrice</td>
+                </tr>
+                <tr>
+                    <th>Total Price: </th>
+                    <td>@Model.Customer_tbl.TotalPrice</td>
+                </tr>
+                <tr>
+                    <th>Payment Status </th>
+                    <td>
+                        @if (Model.Status == 0)
+                        {
+                            <h4>Not Paid</h4>
+                        }
+                        else
+                        {
+                            <h4>Paid</h4>
+                        }
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<HajAndUmrah.Models.Service_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutPackageList.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AirlinesName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepratureDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DepratureTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusDepratureDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusDepratureTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusArrivalDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusArrivalTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer_tbl.FirstName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirlinesName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepratureDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DepratureTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ArrivalTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusDepratureDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusDepratureTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusArrivalDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BusArrivalTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_tbl.FirstName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ServiceId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ServiceId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ServiceId })
+        </td>
+    </tr>
+}
+
+</table>

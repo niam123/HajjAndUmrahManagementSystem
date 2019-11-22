@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ae7bf6126bc2414a89ced617838926a8" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.Admin_tbl" Width="1.5" PointX="7.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.Customer_tbl" Width="1.5" PointX="5.125" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.HotelName_tbl" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.Notification_tbl" Width="1.5" PointX="7.375" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.Order_tbl" Width="1.5" PointX="5.125" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.Package_tbl" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.PackageGroup_tbl" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.PackageType_tbl" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.Payment_tbl" Width="1.5" PointX="7.375" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.RoomType_tbl" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.StarRate_tbl" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.TravelClass_tbl" Width="1.5" PointX="5" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="HajAndUmrahDBModel.FK_Customer_tbl_Package_tbl" ManuallyRouted="false" />
+        <AssociationConnector Association="HajAndUmrahDBModel.FK_Packages_tbl_HotelName_tbl" ManuallyRouted="false" />
+        <AssociationConnector Association="HajAndUmrahDBModel.FK_Packages_tbl_PackageGroup_tbl" ManuallyRouted="false" ></AssociationConnector>
+        <AssociationConnector Association="HajAndUmrahDBModel.FK_Packages_tbl_PackageType_tbl" ManuallyRouted="false" />
+        <AssociationConnector Association="HajAndUmrahDBModel.FK_Packages_tbl_PackageType_tbl1" ManuallyRouted="false" />
+        <AssociationConnector Association="HajAndUmrahDBModel.FK_Packages_tbl_RoomType_tbl" ManuallyRouted="false" />
+        <AssociationConnector Association="HajAndUmrahDBModel.FK_Packages_tbl_TravelClass_tbl" ManuallyRouted="false" />
+        <AssociationConnector Association="HajAndUmrahDBModel.FK_Payment_tbl_Customer_tbl" />
+        <EntityTypeShape EntityType="HajAndUmrahDBModel.Service_tbl" Width="1.5" PointX="9.375" PointY="0.75" />
+        <AssociationConnector Association="HajAndUmrahDBModel.FK_Service_tbl_Customer_tbl" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

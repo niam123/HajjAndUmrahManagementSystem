@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HajAndUmrahDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Admin_tbl">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contact" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Password" Type="varchar(max)" Nullable="false" />
+          <Property Name="RepeatPassword" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer_tbl">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PostalCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Passport" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Designation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="int" Nullable="false" />
+          <Property Name="NoOfAdultTravellers" Type="int" Nullable="false" />
+          <Property Name="NoOfChildTravellers" Type="int" />
+          <Property Name="TotalPrice" Type="int" />
+          <Property Name="PackageId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HotelName_tbl">
+          <Key>
+            <PropertyRef Name="HotelNameId" />
+          </Key>
+          <Property Name="HotelNameId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HotelName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notification_tbl">
+          <Key>
+            <PropertyRef Name="NotificationId" />
+          </Key>
+          <Property Name="NotificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order_tbl">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="Cus_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Package_tbl">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="PackageName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PackageType" Type="int" Nullable="false" />
+          <Property Name="PackageGroup" Type="int" Nullable="false" />
+          <Property Name="NoOfDays" Type="int" Nullable="false" />
+          <Property Name="TravelClass" Type="int" Nullable="false" />
+          <Property Name="HotelName" Type="int" Nullable="false" />
+          <Property Name="RoomType" Type="int" Nullable="false" />
+          <Property Name="StarRate" Type="int" Nullable="false" />
+          <Property Name="PackagePrice" Type="int" Nullable="false" />
+          <Property Name="PackageStatus" Type="varchar" MaxLength="50" />
+          <Property Name="Image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PackageGroup_tbl">
+          <Key>
+            <PropertyRef Name="PackageGroupId" />
+          </Key>
+          <Property Name="PackageGroupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PackageGroupName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PackageType_tbl">
+          <Key>
+            <PropertyRef Name="PackageTypeId" />
+          </Key>
+          <Property Name="PackageTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PackageTypeName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Payment_tbl">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Status" Type="int" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoomType_tbl">
+          <Key>
+            <PropertyRef Name="RoomTypeId" />
+          </Key>
+          <Property Name="RoomTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoomType" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service_tbl">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AirlinesName" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="DepratureDate" Type="date" Nullable="false" />
+          <Property Name="DepratureTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="ArrivalDate" Type="date" Nullable="false" />
+          <Property Name="ArrivalTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="BusName" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="BusDepratureDate" Type="date" Nullable="false" />
+          <Property Name="BusDepratureTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="BusArrivalDate" Type="date" Nullable="false" />
+          <Property Name="BusArrivalTime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StarRate_tbl">
+          <Key>
+            <PropertyRef Name="StarRateId" />
+          </Key>
+          <Property Name="StarRateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StarRate" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TravelClass_tbl">
+          <Key>
+            <PropertyRef Name="TravelClassId" />
+          </Key>
+          <Property Name="TravelClassId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TravelClassName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Customer_tbl_Package_tbl">
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="1" />
+          <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Package_tbl">
+              <PropertyRef Name="PackageId" />
+            </Principal>
+            <Dependent Role="Customer_tbl">
+              <PropertyRef Name="PackageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_HotelName_tbl">
+          <End Role="HotelName_tbl" Type="Self.HotelName_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HotelName_tbl">
+              <PropertyRef Name="HotelNameId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="HotelName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_PackageGroup_tbl">
+          <End Role="PackageGroup_tbl" Type="Self.PackageGroup_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageGroup_tbl">
+              <PropertyRef Name="PackageGroupId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="PackageGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_PackageType_tbl">
+          <End Role="StarRate_tbl" Type="Self.StarRate_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StarRate_tbl">
+              <PropertyRef Name="StarRateId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="StarRate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_PackageType_tbl1">
+          <End Role="PackageType_tbl" Type="Self.PackageType_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageType_tbl">
+              <PropertyRef Name="PackageTypeId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="PackageType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_RoomType_tbl">
+          <End Role="RoomType_tbl" Type="Self.RoomType_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoomType_tbl">
+              <PropertyRef Name="RoomTypeId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="RoomType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_TravelClass_tbl">
+          <End Role="TravelClass_tbl" Type="Self.TravelClass_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TravelClass_tbl">
+              <PropertyRef Name="TravelClassId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="TravelClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_tbl_Customer_tbl">
+          <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="1" />
+          <End Role="Payment_tbl" Type="Self.Payment_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_tbl">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Payment_tbl">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Service_tbl_Customer_tbl">
+          <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="1" />
+          <End Role="Service_tbl" Type="Self.Service_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_tbl">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Service_tbl">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HajAndUmrahDBModelStoreContainer">
+          <EntitySet Name="Admin_tbl" EntityType="Self.Admin_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer_tbl" EntityType="Self.Customer_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HotelName_tbl" EntityType="Self.HotelName_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notification_tbl" EntityType="Self.Notification_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_tbl" EntityType="Self.Order_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Package_tbl" EntityType="Self.Package_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackageGroup_tbl" EntityType="Self.PackageGroup_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PackageType_tbl" EntityType="Self.PackageType_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payment_tbl" EntityType="Self.Payment_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoomType_tbl" EntityType="Self.RoomType_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service_tbl" EntityType="Self.Service_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StarRate_tbl" EntityType="Self.StarRate_tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TravelClass_tbl" EntityType="Self.TravelClass_tbl" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Customer_tbl_Package_tbl" Association="Self.FK_Customer_tbl_Package_tbl">
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+            <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_HotelName_tbl" Association="Self.FK_Packages_tbl_HotelName_tbl">
+            <End Role="HotelName_tbl" EntitySet="HotelName_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_PackageGroup_tbl" Association="Self.FK_Packages_tbl_PackageGroup_tbl">
+            <End Role="PackageGroup_tbl" EntitySet="PackageGroup_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_PackageType_tbl" Association="Self.FK_Packages_tbl_PackageType_tbl">
+            <End Role="StarRate_tbl" EntitySet="StarRate_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_PackageType_tbl1" Association="Self.FK_Packages_tbl_PackageType_tbl1">
+            <End Role="PackageType_tbl" EntitySet="PackageType_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_RoomType_tbl" Association="Self.FK_Packages_tbl_RoomType_tbl">
+            <End Role="RoomType_tbl" EntitySet="RoomType_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_TravelClass_tbl" Association="Self.FK_Packages_tbl_TravelClass_tbl">
+            <End Role="TravelClass_tbl" EntitySet="TravelClass_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_tbl_Customer_tbl" Association="Self.FK_Payment_tbl_Customer_tbl">
+            <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+            <End Role="Payment_tbl" EntitySet="Payment_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Service_tbl_Customer_tbl" Association="Self.FK_Service_tbl_Customer_tbl">
+            <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+            <End Role="Service_tbl" EntitySet="Service_tbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HajAndUmrahDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Admin_tbl">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contact" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RepeatPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer_tbl">
+          <Key>
+            <PropertyRef Name="CustomerId" />
+          </Key>
+          <Property Name="CustomerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Passport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="Int32" Nullable="false" />
+          <Property Name="NoOfAdultTravellers" Type="Int32" Nullable="false" />
+          <Property Name="NoOfChildTravellers" Type="Int32" />
+          <Property Name="TotalPrice" Type="Int32" />
+          <Property Name="PackageId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Package_tbl" Relationship="Self.FK_Customer_tbl_Package_tbl" FromRole="Customer_tbl" ToRole="Package_tbl" />
+          <NavigationProperty Name="Payment_tbl" Relationship="HajAndUmrahDBModel.FK_Payment_tbl_Customer_tbl" FromRole="Customer_tbl" ToRole="Payment_tbl" />
+          <NavigationProperty Name="Service_tbl" Relationship="HajAndUmrahDBModel.FK_Service_tbl_Customer_tbl" FromRole="Customer_tbl" ToRole="Service_tbl" />
+        </EntityType>
+        <EntityType Name="HotelName_tbl">
+          <Key>
+            <PropertyRef Name="HotelNameId" />
+          </Key>
+          <Property Name="HotelNameId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HotelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Package_tbl" Relationship="Self.FK_Packages_tbl_HotelName_tbl" FromRole="HotelName_tbl" ToRole="Package_tbl" />
+        </EntityType>
+        <EntityType Name="Notification_tbl">
+          <Key>
+            <PropertyRef Name="NotificationId" />
+          </Key>
+          <Property Name="NotificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Message" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Order_tbl">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="Cus_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Package_tbl">
+          <Key>
+            <PropertyRef Name="PackageId" />
+          </Key>
+          <Property Name="PackageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PackageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PackageType" Type="Int32" Nullable="false" />
+          <Property Name="PackageGroup" Type="Int32" Nullable="false" />
+          <Property Name="NoOfDays" Type="Int32" Nullable="false" />
+          <Property Name="TravelClass" Type="Int32" Nullable="false" />
+          <Property Name="HotelName" Type="Int32" Nullable="false" />
+          <Property Name="RoomType" Type="Int32" Nullable="false" />
+          <Property Name="StarRate" Type="Int32" Nullable="false" />
+          <Property Name="PackagePrice" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer_tbl" Relationship="Self.FK_Customer_tbl_Package_tbl" FromRole="Package_tbl" ToRole="Customer_tbl" />
+          <NavigationProperty Name="HotelName_tbl" Relationship="Self.FK_Packages_tbl_HotelName_tbl" FromRole="Package_tbl" ToRole="HotelName_tbl" />
+          <NavigationProperty Name="PackageGroup_tbl" Relationship="Self.FK_Packages_tbl_PackageGroup_tbl" FromRole="Package_tbl" ToRole="PackageGroup_tbl" />
+          <NavigationProperty Name="StarRate_tbl" Relationship="Self.FK_Packages_tbl_PackageType_tbl" FromRole="Package_tbl" ToRole="StarRate_tbl" />
+          <NavigationProperty Name="PackageType_tbl" Relationship="Self.FK_Packages_tbl_PackageType_tbl1" FromRole="Package_tbl" ToRole="PackageType_tbl" />
+          <NavigationProperty Name="RoomType_tbl" Relationship="Self.FK_Packages_tbl_RoomType_tbl" FromRole="Package_tbl" ToRole="RoomType_tbl" />
+          <NavigationProperty Name="TravelClass_tbl" Relationship="Self.FK_Packages_tbl_TravelClass_tbl" FromRole="Package_tbl" ToRole="TravelClass_tbl" />
+          <Property Name="PackageStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PackageGroup_tbl">
+          <Key>
+            <PropertyRef Name="PackageGroupId" />
+          </Key>
+          <Property Name="PackageGroupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PackageGroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Package_tbl" Relationship="Self.FK_Packages_tbl_PackageGroup_tbl" FromRole="PackageGroup_tbl" ToRole="Package_tbl" />
+        </EntityType>
+        <EntityType Name="PackageType_tbl">
+          <Key>
+            <PropertyRef Name="PackageTypeId" />
+          </Key>
+          <Property Name="PackageTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PackageTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Package_tbl" Relationship="Self.FK_Packages_tbl_PackageType_tbl1" FromRole="PackageType_tbl" ToRole="Package_tbl" />
+        </EntityType>
+        <EntityType Name="Payment_tbl">
+          <Key>
+            <PropertyRef Name="PaymentId" />
+          </Key>
+          <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer_tbl" Relationship="HajAndUmrahDBModel.FK_Payment_tbl_Customer_tbl" FromRole="Payment_tbl" ToRole="Customer_tbl" />
+        </EntityType>
+        <EntityType Name="RoomType_tbl">
+          <Key>
+            <PropertyRef Name="RoomTypeId" />
+          </Key>
+          <Property Name="RoomTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoomType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Package_tbl" Relationship="Self.FK_Packages_tbl_RoomType_tbl" FromRole="RoomType_tbl" ToRole="Package_tbl" />
+        </EntityType>
+        <EntityType Name="StarRate_tbl">
+          <Key>
+            <PropertyRef Name="StarRateId" />
+          </Key>
+          <Property Name="StarRateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StarRate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Package_tbl" Relationship="Self.FK_Packages_tbl_PackageType_tbl" FromRole="StarRate_tbl" ToRole="Package_tbl" />
+        </EntityType>
+        <EntityType Name="TravelClass_tbl">
+          <Key>
+            <PropertyRef Name="TravelClassId" />
+          </Key>
+          <Property Name="TravelClassId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TravelClassName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Package_tbl" Relationship="Self.FK_Packages_tbl_TravelClass_tbl" FromRole="TravelClass_tbl" ToRole="Package_tbl" />
+        </EntityType>
+        <Association Name="FK_Customer_tbl_Package_tbl">
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="1" />
+          <End Role="Customer_tbl" Type="Self.Customer_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Package_tbl">
+              <PropertyRef Name="PackageId" />
+            </Principal>
+            <Dependent Role="Customer_tbl">
+              <PropertyRef Name="PackageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_HotelName_tbl">
+          <End Role="HotelName_tbl" Type="Self.HotelName_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HotelName_tbl">
+              <PropertyRef Name="HotelNameId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="HotelName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_PackageGroup_tbl">
+          <End Role="PackageGroup_tbl" Type="Self.PackageGroup_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageGroup_tbl">
+              <PropertyRef Name="PackageGroupId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="PackageGroup" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_PackageType_tbl">
+          <End Role="StarRate_tbl" Type="Self.StarRate_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StarRate_tbl">
+              <PropertyRef Name="StarRateId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="StarRate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_PackageType_tbl1">
+          <End Role="PackageType_tbl" Type="Self.PackageType_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageType_tbl">
+              <PropertyRef Name="PackageTypeId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="PackageType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_RoomType_tbl">
+          <End Role="RoomType_tbl" Type="Self.RoomType_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoomType_tbl">
+              <PropertyRef Name="RoomTypeId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="RoomType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Packages_tbl_TravelClass_tbl">
+          <End Role="TravelClass_tbl" Type="Self.TravelClass_tbl" Multiplicity="1" />
+          <End Role="Package_tbl" Type="Self.Package_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TravelClass_tbl">
+              <PropertyRef Name="TravelClassId" />
+            </Principal>
+            <Dependent Role="Package_tbl">
+              <PropertyRef Name="TravelClass" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HajAndUmrahDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Admin_tbl" EntityType="Self.Admin_tbl" />
+          <EntitySet Name="Customer_tbl" EntityType="Self.Customer_tbl" />
+          <EntitySet Name="HotelName_tbl" EntityType="Self.HotelName_tbl" />
+          <EntitySet Name="Notification_tbl" EntityType="Self.Notification_tbl" />
+          <EntitySet Name="Order_tbl" EntityType="Self.Order_tbl" />
+          <EntitySet Name="Package_tbl" EntityType="Self.Package_tbl" />
+          <EntitySet Name="PackageGroup_tbl" EntityType="Self.PackageGroup_tbl" />
+          <EntitySet Name="PackageType_tbl" EntityType="Self.PackageType_tbl" />
+          <EntitySet Name="Payment_tbl" EntityType="Self.Payment_tbl" />
+          <EntitySet Name="RoomType_tbl" EntityType="Self.RoomType_tbl" />
+          <EntitySet Name="StarRate_tbl" EntityType="Self.StarRate_tbl" />
+          <EntitySet Name="TravelClass_tbl" EntityType="Self.TravelClass_tbl" />
+          <AssociationSet Name="FK_Customer_tbl_Package_tbl" Association="Self.FK_Customer_tbl_Package_tbl">
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+            <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_HotelName_tbl" Association="Self.FK_Packages_tbl_HotelName_tbl">
+            <End Role="HotelName_tbl" EntitySet="HotelName_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_PackageGroup_tbl" Association="Self.FK_Packages_tbl_PackageGroup_tbl">
+            <End Role="PackageGroup_tbl" EntitySet="PackageGroup_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_PackageType_tbl" Association="Self.FK_Packages_tbl_PackageType_tbl">
+            <End Role="StarRate_tbl" EntitySet="StarRate_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_PackageType_tbl1" Association="Self.FK_Packages_tbl_PackageType_tbl1">
+            <End Role="PackageType_tbl" EntitySet="PackageType_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_RoomType_tbl" Association="Self.FK_Packages_tbl_RoomType_tbl">
+            <End Role="RoomType_tbl" EntitySet="RoomType_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Packages_tbl_TravelClass_tbl" Association="Self.FK_Packages_tbl_TravelClass_tbl">
+            <End Role="TravelClass_tbl" EntitySet="TravelClass_tbl" />
+            <End Role="Package_tbl" EntitySet="Package_tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_tbl_Customer_tbl" Association="HajAndUmrahDBModel.FK_Payment_tbl_Customer_tbl">
+            <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+            <End Role="Payment_tbl" EntitySet="Payment_tbl" />
+          </AssociationSet>
+          <EntitySet Name="Service_tbl" EntityType="HajAndUmrahDBModel.Service_tbl" />
+          <AssociationSet Name="FK_Service_tbl_Customer_tbl" Association="HajAndUmrahDBModel.FK_Service_tbl_Customer_tbl">
+            <End Role="Customer_tbl" EntitySet="Customer_tbl" />
+            <End Role="Service_tbl" EntitySet="Service_tbl" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_Payment_tbl_Customer_tbl">
+          <End Type="HajAndUmrahDBModel.Customer_tbl" Role="Customer_tbl" Multiplicity="1" />
+          <End Type="HajAndUmrahDBModel.Payment_tbl" Role="Payment_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_tbl">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Payment_tbl">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Service_tbl">
+          <Key>
+            <PropertyRef Name="ServiceId" />
+          </Key>
+          <Property Name="ServiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AirlinesName" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="DepratureDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="DepratureTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="ArrivalDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ArrivalTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="BusName" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="BusDepratureDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="BusDepratureTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="BusArrivalDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="BusArrivalTime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Customer_tbl" Relationship="HajAndUmrahDBModel.FK_Service_tbl_Customer_tbl" FromRole="Service_tbl" ToRole="Customer_tbl" />
+        </EntityType>
+        <Association Name="FK_Service_tbl_Customer_tbl">
+          <End Type="HajAndUmrahDBModel.Customer_tbl" Role="Customer_tbl" Multiplicity="1" />
+          <End Type="HajAndUmrahDBModel.Service_tbl" Role="Service_tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer_tbl">
+              <PropertyRef Name="CustomerId" />
+            </Principal>
+            <Dependent Role="Service_tbl">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HajAndUmrahDBModelStoreContainer" CdmEntityContainer="HajAndUmrahDBEntities1">
+          <EntitySetMapping Name="Admin_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.Admin_tbl">
+              <MappingFragment StoreEntitySet="Admin_tbl">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="RepeatPassword" ColumnName="RepeatPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.Customer_tbl">
+              <MappingFragment StoreEntitySet="Customer_tbl">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Passport" ColumnName="Passport" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="NoOfAdultTravellers" ColumnName="NoOfAdultTravellers" />
+                <ScalarProperty Name="NoOfChildTravellers" ColumnName="NoOfChildTravellers" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HotelName_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.HotelName_tbl">
+              <MappingFragment StoreEntitySet="HotelName_tbl">
+                <ScalarProperty Name="HotelNameId" ColumnName="HotelNameId" />
+                <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notification_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.Notification_tbl">
+              <MappingFragment StoreEntitySet="Notification_tbl">
+                <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.Order_tbl">
+              <MappingFragment StoreEntitySet="Order_tbl">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="Cus_Id" ColumnName="Cus_Id" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Package_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.Package_tbl">
+              <MappingFragment StoreEntitySet="Package_tbl">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="PackageStatus" ColumnName="PackageStatus" />
+                <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+                <ScalarProperty Name="PackageType" ColumnName="PackageType" />
+                <ScalarProperty Name="PackageGroup" ColumnName="PackageGroup" />
+                <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+                <ScalarProperty Name="TravelClass" ColumnName="TravelClass" />
+                <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+                <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+                <ScalarProperty Name="StarRate" ColumnName="StarRate" />
+                <ScalarProperty Name="PackagePrice" ColumnName="PackagePrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackageGroup_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.PackageGroup_tbl">
+              <MappingFragment StoreEntitySet="PackageGroup_tbl">
+                <ScalarProperty Name="PackageGroupId" ColumnName="PackageGroupId" />
+                <ScalarProperty Name="PackageGroupName" ColumnName="PackageGroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PackageType_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.PackageType_tbl">
+              <MappingFragment StoreEntitySet="PackageType_tbl">
+                <ScalarProperty Name="PackageTypeId" ColumnName="PackageTypeId" />
+                <ScalarProperty Name="PackageTypeName" ColumnName="PackageTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payment_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.Payment_tbl">
+              <MappingFragment StoreEntitySet="Payment_tbl">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoomType_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.RoomType_tbl">
+              <MappingFragment StoreEntitySet="RoomType_tbl">
+                <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+                <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StarRate_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.StarRate_tbl">
+              <MappingFragment StoreEntitySet="StarRate_tbl">
+                <ScalarProperty Name="StarRateId" ColumnName="StarRateId" />
+                <ScalarProperty Name="StarRate" ColumnName="StarRate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TravelClass_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.TravelClass_tbl">
+              <MappingFragment StoreEntitySet="TravelClass_tbl">
+                <ScalarProperty Name="TravelClassId" ColumnName="TravelClassId" />
+                <ScalarProperty Name="TravelClassName" ColumnName="TravelClassName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service_tbl">
+            <EntityTypeMapping TypeName="HajAndUmrahDBModel.Service_tbl">
+              <MappingFragment StoreEntitySet="Service_tbl">
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="BusArrivalTime" ColumnName="BusArrivalTime" />
+                <ScalarProperty Name="BusArrivalDate" ColumnName="BusArrivalDate" />
+                <ScalarProperty Name="BusDepratureTime" ColumnName="BusDepratureTime" />
+                <ScalarProperty Name="BusDepratureDate" ColumnName="BusDepratureDate" />
+                <ScalarProperty Name="BusName" ColumnName="BusName" />
+                <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+                <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+                <ScalarProperty Name="DepratureTime" ColumnName="DepratureTime" />
+                <ScalarProperty Name="DepratureDate" ColumnName="DepratureDate" />
+                <ScalarProperty Name="AirlinesName" ColumnName="AirlinesName" />
+                <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

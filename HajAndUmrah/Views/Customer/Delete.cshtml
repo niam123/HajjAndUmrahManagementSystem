@@ -1,0 +1,137 @@
+﻿@model HajAndUmrah.Models.Customer_tbl
+
+@{
+    ViewBag.Title = "Reject";
+    Layout = "~/Views/Shared/_AdminLayoutPackageList.cshtml";
+}
+
+<h2>Reject</h2>
+
+<h3>Are you sure you want to reject this?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passport)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Package_tbl.PackageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package_tbl.PackageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Package_tbl.PackageType_tbl.PackageTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package_tbl.PackageType_tbl.PackageTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Package_tbl.PackagePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package_tbl.PackagePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfAdultTravellers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfAdultTravellers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfChildTravellers)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfChildTravellers)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Reject" class="btn btn-default" onclick="return confirm('If you are want to reject this then you have to delete first from the payment portion')" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

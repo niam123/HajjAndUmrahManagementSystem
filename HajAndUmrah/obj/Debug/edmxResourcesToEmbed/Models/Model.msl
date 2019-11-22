@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HajAndUmrahDBModelStoreContainer" CdmEntityContainer="HajAndUmrahDBEntities1">
+    <EntitySetMapping Name="Admin_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.Admin_tbl">
+        <MappingFragment StoreEntitySet="Admin_tbl">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Contact" ColumnName="Contact" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="RepeatPassword" ColumnName="RepeatPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.Customer_tbl">
+        <MappingFragment StoreEntitySet="Customer_tbl">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Passport" ColumnName="Passport" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="NoOfAdultTravellers" ColumnName="NoOfAdultTravellers" />
+          <ScalarProperty Name="NoOfChildTravellers" ColumnName="NoOfChildTravellers" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HotelName_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.HotelName_tbl">
+        <MappingFragment StoreEntitySet="HotelName_tbl">
+          <ScalarProperty Name="HotelNameId" ColumnName="HotelNameId" />
+          <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notification_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.Notification_tbl">
+        <MappingFragment StoreEntitySet="Notification_tbl">
+          <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.Order_tbl">
+        <MappingFragment StoreEntitySet="Order_tbl">
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Cus_Id" ColumnName="Cus_Id" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Package_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.Package_tbl">
+        <MappingFragment StoreEntitySet="Package_tbl">
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="PackageStatus" ColumnName="PackageStatus" />
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PackageName" ColumnName="PackageName" />
+          <ScalarProperty Name="PackageType" ColumnName="PackageType" />
+          <ScalarProperty Name="PackageGroup" ColumnName="PackageGroup" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+          <ScalarProperty Name="TravelClass" ColumnName="TravelClass" />
+          <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="StarRate" ColumnName="StarRate" />
+          <ScalarProperty Name="PackagePrice" ColumnName="PackagePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PackageGroup_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.PackageGroup_tbl">
+        <MappingFragment StoreEntitySet="PackageGroup_tbl">
+          <ScalarProperty Name="PackageGroupId" ColumnName="PackageGroupId" />
+          <ScalarProperty Name="PackageGroupName" ColumnName="PackageGroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PackageType_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.PackageType_tbl">
+        <MappingFragment StoreEntitySet="PackageType_tbl">
+          <ScalarProperty Name="PackageTypeId" ColumnName="PackageTypeId" />
+          <ScalarProperty Name="PackageTypeName" ColumnName="PackageTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payment_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.Payment_tbl">
+        <MappingFragment StoreEntitySet="Payment_tbl">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomType_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.RoomType_tbl">
+        <MappingFragment StoreEntitySet="RoomType_tbl">
+          <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StarRate_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.StarRate_tbl">
+        <MappingFragment StoreEntitySet="StarRate_tbl">
+          <ScalarProperty Name="StarRateId" ColumnName="StarRateId" />
+          <ScalarProperty Name="StarRate" ColumnName="StarRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TravelClass_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.TravelClass_tbl">
+        <MappingFragment StoreEntitySet="TravelClass_tbl">
+          <ScalarProperty Name="TravelClassId" ColumnName="TravelClassId" />
+          <ScalarProperty Name="TravelClassName" ColumnName="TravelClassName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service_tbl">
+      <EntityTypeMapping TypeName="HajAndUmrahDBModel.Service_tbl">
+        <MappingFragment StoreEntitySet="Service_tbl">
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BusArrivalTime" ColumnName="BusArrivalTime" />
+          <ScalarProperty Name="BusArrivalDate" ColumnName="BusArrivalDate" />
+          <ScalarProperty Name="BusDepratureTime" ColumnName="BusDepratureTime" />
+          <ScalarProperty Name="BusDepratureDate" ColumnName="BusDepratureDate" />
+          <ScalarProperty Name="BusName" ColumnName="BusName" />
+          <ScalarProperty Name="ArrivalTime" ColumnName="ArrivalTime" />
+          <ScalarProperty Name="ArrivalDate" ColumnName="ArrivalDate" />
+          <ScalarProperty Name="DepratureTime" ColumnName="DepratureTime" />
+          <ScalarProperty Name="DepratureDate" ColumnName="DepratureDate" />
+          <ScalarProperty Name="AirlinesName" ColumnName="AirlinesName" />
+          <ScalarProperty Name="ServiceId" ColumnName="ServiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,105 @@
+﻿@model HajAndUmrah.Models.Package_tbl
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayoutPackageList.cshtml";
+}
+
+<h2>Delete Package</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackagePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackagePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HotelName_tbl.HotelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HotelName_tbl.HotelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackageGroup_tbl.PackageGroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackageGroup_tbl.PackageGroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StarRate_tbl.StarRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StarRate_tbl.StarRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackageType_tbl.PackageTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackageType_tbl.PackageTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomType_tbl.RoomType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomType_tbl.RoomType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TravelClass_tbl.TravelClassName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TravelClass_tbl.TravelClassName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Yes" class="btn btn-default" /> |
+            @Html.ActionLink("No", "Index")
+        </div>
+    }
+</div>

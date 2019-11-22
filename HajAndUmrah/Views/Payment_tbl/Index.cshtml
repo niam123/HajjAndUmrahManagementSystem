@@ -1,0 +1,103 @@
+﻿@model IEnumerable<HajAndUmrah.Models.Payment_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutPackageList.cshtml";
+}
+
+<h2>Payment List</h2>
+
+<form method="post">
+    <input type="text" name="Search"/>
+    <input type="submit" value="Search" />
+
+</form>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Payment Status
+            @*@Html.DisplayNameFor(model => model.Status)*@
+        </th>
+        <th>
+             Name
+        </th>
+        <th>
+            Email
+        </th>      
+        <th>
+            Package Name
+        </th>
+        <th>
+            Package Type
+        </th>
+        <th>
+            Package Price
+        </th>
+        <th>
+            Number Of Adult Travellers
+        </th>
+        <th>
+            Number Of Child Travellers
+        </th>
+        <th>
+            Total Price
+        </th>
+        <th>#</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+
+            @if (item.Status == 0)
+            {
+                <h4>Not Paid</h4>
+            }
+            else
+            {
+                <h4>Paid</h4>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer_tbl.FirstName) @Html.DisplayFor(modelItem => item.Customer_tbl.LastName)
+        </td>     
+        <td>
+            @item.Customer_tbl.Email
+        </td>
+        <td>
+            @item.Customer_tbl.Package_tbl.PackageName
+        </td>
+        <td>
+            @item.Customer_tbl.Package_tbl.PackageType_tbl.PackageTypeName
+        </td>
+        <td>
+            @item.Customer_tbl.Package_tbl.PackagePrice
+        </td>
+        <td>
+            @item.Customer_tbl.NoOfAdultTravellers
+        </td>
+        <td>
+            @item.Customer_tbl.NoOfChildTravellers
+        </td>
+        <td>
+            @item.Customer_tbl.TotalPrice
+        </td>
+        <td>
+            @if (item.Status == 0)
+            {
+                @Html.ActionLink("Pay now", "Edit", new { id = item.PaymentId }, new { @class = "btn btn-md btn-success" })
+
+                @Html.ActionLink("Reject", "Delete", new { id = item.PaymentId })
+            }
+            else
+            {
+                @Html.ActionLink("Print", "Details", new { id = item.PaymentId }, new { @class = "btn btn-md btn-warning" })
+            }
+        </td>
+    </tr>
+}
+
+
+</table>

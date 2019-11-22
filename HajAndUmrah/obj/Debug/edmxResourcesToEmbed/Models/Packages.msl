@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HumsDBModel1StoreContainer" CdmEntityContainer="HumsDBEntities12">
+    <EntitySetMapping Name="Package_tbl">
+      <EntityTypeMapping TypeName="HumsDBModel1.Package_tbl">
+        <MappingFragment StoreEntitySet="Package_tbl">
+          <ScalarProperty Name="PackageId" ColumnName="PackageId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PName" ColumnName="PName" />
+          <ScalarProperty Name="PackageType" ColumnName="PackageType" />
+          <ScalarProperty Name="PGroup" ColumnName="PGroup" />
+          <ScalarProperty Name="NoOfDays" ColumnName="NoOfDays" />
+          <ScalarProperty Name="TravelClass" ColumnName="TravelClass" />
+          <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+          <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+          <ScalarProperty Name="StarRate" ColumnName="StarRate" />
+          <ScalarProperty Name="PackagePrice" ColumnName="PackagePrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
